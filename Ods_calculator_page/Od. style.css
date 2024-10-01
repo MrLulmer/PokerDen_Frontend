@@ -1,0 +1,39 @@
+html{
+    font-family: "Arial", sans-serif;
+    color: #ffffff;
+}
+body {
+    background-image: url('Poker_Astronauts.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    height: 300vh;
+    background-attachment: scroll;
+}
+
+.titel {
+    margin-top: 80px;
+    margin-left: 25px;
+}
+
+/*Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333333cd; 
+    padding: 15px; 
+    text-align: center; 
+}
+
+.navbar a {
+    color: white; 
+    text-decoration: none; 
+    margin: 0 15px; 
+}
+
+.navbar a:hover {
+    color: #ffcc00;
+}

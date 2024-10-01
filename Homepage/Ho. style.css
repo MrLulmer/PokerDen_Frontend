@@ -12,8 +12,9 @@ body {
     background-attachment: scroll;
 }
 
-h1 {
+.titel {
     margin-top: 80px;
+    margin-left: 25px;
 }
 
 /*Navbar */
@@ -35,37 +36,4 @@ h1 {
 
 .navbar a:hover {
     color: #ffcc00;
-}
-
-/*timer*/
-.timer {
-    font-family: sans-serif;
-    display: inline-block;
-    padding: 24px 32px;
-    border-radius: 30px;
-    background: rgba(70, 70, 70, 0.555);
-}
-
-.timer_part {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.timer_btn {
-    width: 50px;
-    height: 50px;
-    margin-left: 16px;
-    border-radius: 50%;
-    border: none;
-    color: rgb(0, 0, 0);
-    background-color: #8208e6;
-    cursor: pointer;
-}
-
-.timer_btn-start{
-    background-color: #00b84c;
-}
-
-.timer_btn-stop{
-    background-color: #ff0256;
 }
