@@ -6,27 +6,61 @@
   <title>Poker Timer </title>
   <link rel="stylesheet" href="Timer_style.css">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
       <script src="Timer_script.js"></script>
 </head>
 <body>
   <h1 class="titel">Blind Timer: </h1>
-<!--Timer-->
-<div class="timer" id="timer">10:00</div>
-<div>
-    <button class="startBtn" onclick="startTimer()">Start </button>
-    <button class="pauseBtn" onclick="pauseTimer()">Pause </button>
-    <button class="playBtn" onclick="resumeTimer()">Play </button>
-</div>
 
-<!--Navbar-->
-<div class="navbar">
-  <a href="../Homepage/Home_file.html"> Homepage </a>
-  <a href="../Timer_page/Timer_file.html"> Timer </a>
-  <a href="../Statistics_page/Stats_file.html"> Statistics </a>
-  <a href="../Odds_calculator_page/Odds_file.html"> Odds </a>
-</div>
+  <!--Timer-->
+  <div class="timer" id="timer">00:00</div>
+
+
+  <!--Start & Reset Button-->
+  <div>
+      <button class="startBtn" onclick="startTimer()">Start </button>
+      <button class="resetBtn" onclick="resetTimer()">Reset </button>
+    </div>
+  <!--Pause & Play Button-->
+  <div>
+      <button class="pauseBtn" onclick="pauseTimer()">Pause </button>
+      <button class="playBtn" onclick="resumeTimer()">Play </button>
+    </div>
+
+  
+  <!--Small Blind (input1)-->
+  <div id="input1-container">
+      <label for="input1" id="input1-label" >Small Blind:</label>
+      <input type="number" id="input1" value="0">
+      <span id="smallBlindValue">0</span> <!-- Display the value here -->
+    </div>
+    <p1 id="sb">Small Blind</p1>
+
+    <!-- Big Blind (input2)-->
+  <div id="input2-container">
+      <label for="input2" id="input2-label">Big Blind:</label>
+      <input type="number" id="input2" value="0">
+      <span id="bigBlindValue">0</span> <!-- Display the value here -->
+    </div>
+    <p2 id="bb">Big Blind</p2>
+
+  <!--Time (input3)-->
+  <div id="input3-container">
+      <label for="input3">Time:</label>
+      <input type="number" id="input3" placeholder="Minutes">
+    </div>
+
+  <!--Alert; NaN-->
+  <div id="NaN_message"></div>
+  <!--Alert; Time over-->
+  <div id="timeup_message"></div>
+
+  <!--Navbar-->
+  <div class="navbar">
+      <a href="../Homepage/Home_file.html"> Homepage </a>
+      <a href="../Timer_page/Timer_file.html"> Timer </a>
+      <a href="../Statistics_page/Stats_file.html"> Statistics </a>
+      <a href="../Odds_calculator_page/Odds_file.html"> Odds </a>
+    </div>
 
 </body>
 </html>

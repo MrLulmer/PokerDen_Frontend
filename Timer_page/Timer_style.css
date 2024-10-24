@@ -3,7 +3,7 @@ html{
     color: #ffffff;
 }
 body {
-    background-image: url('Poker_Astronauts.png');
+    background-color: #584d4d;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -11,10 +11,41 @@ body {
     height: 300vh;
     background-attachment: scroll;
 }
-
 .titel {
     margin-top: 80px;
     margin-left: 25px;
+}
+
+/*NaN Message */
+#NaN_message {
+    font-size: 30px;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: pink;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/*Timer Message */
+#timeup_message {
+    font-size: 30px;
+    display: none;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: pink;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
 /*Navbar */
@@ -27,62 +58,217 @@ body {
     padding: 15px; 
     text-align: center; 
 }
-
 .navbar a {
     color: white; 
     text-decoration: none; 
     margin: 0 15px; 
 }
-
 .navbar a:hover {
     color: #ffcc00;
 }
 
+
 /*Timer*/
 .timer {
-    font-size: 48px;
+    font-size: 90px;
     color: #ffffff;
-    margin-top: 40px;
-    margin-left: 25px;
+    margin-top: 64px;
+    text-align: center;
     width: 100%;
 }
-
-button {
-    margin-top: 20px;
-    margin-left: 10px;
-    font-size: 16px;
-    cursor: pointer;
-
-}
-
+/*Buttons (Start, Reset, Pause, Play)*/
 .startBtn {
-    padding: 10px 15px;
-    text-align: center;
-    font-size: 14px;
-    margin-left: 30px;
-    border: none;
-    border-radius: 10px;
-    background-color: #8208e6;
-    color: #ffffff;
+    position: absolute; 
+    top: 18%;
+    left: 35%; 
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
     cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;  
 }
+.startBtn:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.resetBtn {
+    position: absolute; 
+    top: 18%;
+    left: 60%; 
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;  
+}
+.resetBtn:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
 .pauseBtn {
-    padding: 10px 15px;
-    text-align: center;
-    font-size: 14px;
-    border: none;
-    border-radius: 10px;
-    background-color: #ff0256;
-    color: #ffffff;
+    position: absolute; 
+    top: 40%;
+    left: 60%; 
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
     cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;  
 }
+.pauseBtn:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
 .playBtn {
-    padding: 10px 15px;
-    text-align: center;
-    font-size: 14px;
-    border: none;
-    border-radius: 10px;
-    background-color: #00b84dcf;
-    color: #ffffff;
+    position: absolute; 
+    top: 40%;
+    left: 35%; 
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
     cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;  
+} 
+.playBtn:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+
+/*Textbox*/
+
+/*Input1 (SB)*/
+#input1-container {
+    position: absolute;
+    margin-left: 25px;
+    margin-top: -115px;
+    }
+    #input1 {
+        margin-left: 5px;
+        border: 2px solid #665F54; 
+        background-color: #E1D3BD; 
+        transition: border-color 0.3s; 
+        padding: 5px; 
+        border-radius: 4px; 
+    }
+    #input1:hover {
+        border-color: #F16052; 
+    }
+    #bigBlindValue {
+        color: #ffffff; /* Dark red for value */
+        position: absolute; 
+        margin-left: 195%;
+        margin-top: 40%;
+        font-size: 50px;
+    }
+
+/*Input2 (BB)*/
+#input2-container {
+    position:absolute;
+    margin-left: 25px;
+    margin-top: -80px;
+    }
+    #input2 {
+        margin-left: 22px;
+        border: 2px solid #665F54; 
+        background-color: #E1D3BD; 
+        transition: border-color 0.3s; 
+        padding: 5px; 
+        border-radius: 4px; 
+    }
+    #input2:hover {
+        border-color: #F16052; 
+    }
+    #smallBlindValue {
+        color: #ffffff; /* Dark yellow for value */
+        position: absolute; 
+        margin-left: 135%;
+        margin-top: 53%;
+        font-size: 50px;
+    }
+
+/*Input3 (Time)*/
+#input3-container {
+    position:absolute;
+    margin-left: 25px;
+    margin-top: -45px;
+    }
+    #input3 {
+        margin-left: 50px;
+        border: 2px solid #665F54; 
+        background-color: #E1D3BD; 
+        transition: border-color 0.3s; 
+        padding: 5px; 
+        border-radius: 4px; 
+    }
+    #input3:hover {
+        border-color: #F16052;
+    }
+
+/*SB & BB*/
+#bb{
+    position: absolute;
+    margin-top: 5.4%;
+    margin-left: 53%;
+}
+
+#sb{
+    position: absolute;
+    margin-top: 5.4%;
+    margin-left: 42%;
 }

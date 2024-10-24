@@ -11,7 +11,7 @@ html{
     
 /*Background*/
 body {
-    background-image: url('Poker_Astronauts.png');
+    background-color: #343030;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -62,7 +62,7 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #333333cd; 
+    background-color: #584d4d; 
     padding: 15px; 
     text-align: center; 
 }
