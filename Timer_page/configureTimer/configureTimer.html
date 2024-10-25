@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Poker Timer </title>
+  <link href="../../style.css" rel="stylesheet" type="text/css">   <!-- Import styles used in every file from style.css (base styles) -->
+  <link href="configureTimer.css" rel="stylesheet" type="text/css">         <!-- Import styles specifically only used in this file -->
+</head>
+<body>
+    <!--Navbar-->
+    <div class="navbar">
+        <a href="../../Homepage/Home_file.html"> Homepage </a>
+        <a href="../timer.html"> Timer </a>
+        <a href="../../Statistics_page/Stats_file.html"> Statistics </a>
+        <a href="../../Odds_calculator_page/Odds_file.html"> Odds </a>
+    </div>
+
+    <div class="content">
+      <h1 class="titel">Configure your timer: </h1>
+      <form action="../timer.html" method="GET" onsubmit="handleFormSubmit(event)" id="form">   <!-- Switch to new page on submmit and provide the values in the URL for the next page -->
+        <div class="labelInputContainer">
+          <label for="smallBlind">Small Blind:</label> <br>
+          <input type="number" name="smallBlind" id="smallBlind" min="1" value="0" max="100000"> <br>  <!-- It is important to set a max value, so that the number can always get rendered cleanly -->
+        </div>
+        <div class="labelInputContainer">
+          <label for="bigBlind">Big Blind:</label> <br>
+          <input type="number" name="bigBlind" id="bigBlind" min="1" value="0" max="100000"> <br>
+        </div>
+        <div class="labelInputContainer">
+          <label for="time">Time:</label> <br>
+          <input type="number" name="time" id="time" min="1" value="0" max="1000"> <br>
+        </div>
+        <button type="submit">Start Timer</button>
+      </form>
+    </div>
+
+    <script>
+      function handleFormSubmit(event){
+          event.preventDefault();
+          const form = document.querySelector("#form");
+          form.submit();
+      }
+    </script>
+</body>
+</html>

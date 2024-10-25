@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Poker Timer </title>
+  <link href="../style.css" rel="stylesheet" type="text/css">   <!-- Import styles used in every file from style.css (base styles) -->
+</head>
+<body>
+    <!--Navbar-->
+    <div class="navbar">
+        <a href="../Homepage/Home_file.html"> Homepage </a>
+        <a href="configureTimer/configureTimer.html"> Timer </a>
+        <a href="../Statistics_page/Stats_file.html"> Statistics </a>
+        <a href="../Odds_calculator_page/Odds_file.html"> Odds </a>
+    </div>
+    <div class="content">
+        <h1 class="titel">Blinds Timer: </h1>
+        <div id="timerContainer">
+            <div class="timer" id="timer">00:00</div>
+            <p>Small blind: <span id="smallBlindValue"></span></p>
+            <p>Big blind: <span id="bigBlindValue"></span></p>
+
+            <!--Start & Reset Button-->
+            <div>
+                <button class="startBtn" onclick="startTimer()">Start </button>
+                <button class="resetBtn" onclick="resetTimer()">Reset </button>
+              </div>
+            <!--Pause & Play Button-->
+            <div>
+                <button class="pauseBtn" onclick="pauseTimer()">Pause </button>
+                <button class="playBtn" onclick="resumeTimer()">Play </button>
+              </div>
+        </div>
+        <div id="NaN_message"></div>
+        <div id="timeup_message"></div>
+    </div>
+
+    <script src="timer.js"></script>
+</body>
+</html>
