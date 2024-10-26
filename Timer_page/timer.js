@@ -1,15 +1,14 @@
 let timerInterval;
 let time = 0; // The time is set dynamically
 let isPaused = false;
+let smallBlind;
+let bigBlind;
+let playTime;
 
 
 function startTimer() {
     // Get elements from URL or document
     const timerElement = document.getElementById('timer');
-    const params = new URLSearchParams(window.location.search);
-    let smallBlind = params.get("smallBlind");
-    let bigBlind = params.get("bigBlind");
-    let playTime = params.get("time");
     
     // Check if `timerInterval` already exists and delete it
     if (timerInterval) {
@@ -96,9 +95,9 @@ function displayTimer(seconds, minutes) {
 }
 window.onload = function() {
     const params = new URLSearchParams(window.location.search);
-    const smallBlind = params.get("smallBlind");
-    const bigBlind = params.get("bigBlind");
-    const playTime = params.get("time");    
+    smallBlind = params.get("smallBlind");
+    bigBlind = params.get("bigBlind");
+    playTime = params.get("time");
     displayTimer(0, playTime); 
     
     updateValues(smallBlind, bigBlind);
