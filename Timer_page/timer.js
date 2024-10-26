@@ -1,66 +1,54 @@
 let timerInterval;
-let time = 0; // Die Zeit wird dynamisch gesetzt
+let time = 0; // The time is set dynamically
 let isPaused = false;
 
-function startTimer() {
-    const timerElement = document.getElementById('timer');
 
+function startTimer() {
+    // Get elements from URL or document
+    const timerElement = document.getElementById('timer');
     const params = new URLSearchParams(window.location.search);
     let smallBlind = params.get("smallBlind");
     let bigBlind = params.get("bigBlind");
     let playTime = params.get("time");
-
-    // Umwandlung der Eingabezeit in Sekunden
-    const duration = parseFloat(playTime);
-    const NaN_message = document.getElementById("NaN_message");
-    if (isNaN(duration) || duration <= 0) {
-        NaN_message.textContent = "The number that was entered is Not a Number";
-        NaN_message.style.display = "block";
-        
-        // Set a timeout to hide the message after 5 seconds
-        setTimeout(function() {
-            NaN_message.style.display = "none";
-            // window.location.replace("configureTimer/configureTimer.html");
-        }, 5000);
-    } 
-
-
-    // Überprüfen, ob `timerInterval` bereits existiert, und dieses löschen
+    
+    // Check if `timerInterval` already exists and delete it
     if (timerInterval) {
         clearInterval(timerInterval);
     }
 
-    time = duration * 60;
+    // Input in minutes to seconds
+    time = playTime * 60;
     isPaused = false;
 
-    // Countdown starten
+    // Start countdown 
     timerInterval = setInterval(function() {
         if (!isPaused) {
             let minutes = Math.floor(time / 60);
             let seconds = time % 60;
 
-            // Zeit formatieren, sodass immer zwei Ziffern angezeigt werden
+            // Format time so that two digits are always displayed
             minutes = minutes < 10 ? '0' + minutes : minutes;
             seconds = seconds < 10 ? '0' + seconds : seconds;
-
+            // Format time so that a : is placed between
             timerElement.textContent = minutes + ":" + seconds;
 
             if (time <= 0) {
-                clearInterval(timerInterval);  // Timer beenden
-                timerInterval = null;  // Sicherstellen, dass `timerInterval` zurückgesetzt wird
+                clearInterval(timerInterval);  // End Timer 
+                timerInterval = null;  // Set timer to 0
                 
-                // Zahlen in den Eingabefeldern verdoppeln
+                // Double the blinds
                 smallBlind = parseFloat(smallBlind) * 2;
                 bigBlind = parseFloat(bigBlind) * 2;
+
 
                 // Update blinds visually
                 updateValues(smallBlind, bigBlind);
 
-                // Ton abspielen
+                // Plays sound
                 const sound = new Audio('Time_over.mp3');
                 sound.play();
             
-                // Nachricht anzeigen
+                // Blind rase message 
                 const timeup_message = document.getElementById("timeup_message")
                 timeup_message.textContent = "Time up! Blind raised to " + smallBlind + "/" + bigBlind;
                 timeup_message.style.display = "block";
@@ -70,36 +58,49 @@ function startTimer() {
                     timeup_message.style.display = "none";
                 }, 5000);
                 
-                // Timer nach Ablauf neu startens
+                // Restarts timer 
                 startTimer();
+
             }
 
             time--;
         }
-    }, 1000); // Aktualisierung alle 1 Sekunde
+    }, 1000); // Updates every second 
 }
 
+// Pause 
 function pauseTimer() {
     isPaused = true;
 }
-
+// Play 
 function resumeTimer() {
     isPaused = false;
 }
-
+// Reset 
 function resetTimer() {
     window.location.replace("configureTimer/configureTimer.html");
 }
 
+// Updates values 
 function updateValues(smallBlind, bigBlind) {
     document.getElementById("smallBlindValue").textContent = smallBlind;
     document.getElementById("bigBlindValue").textContent = bigBlind;
 }
 
+// Displays timer from the beginning
+function displayTimer(seconds, minutes) {
+    const timerElement = document.getElementById("timer");
+    const displayMinutes = minutes < 10 ? '0' + minutes : minutes;
+    const displaySeconds = seconds < 10 ? '0' + seconds : seconds;  // Fixed: Added 'seconds' variable
+    timerElement.textContent = displayMinutes + ":" + displaySeconds
+}
 window.onload = function() {
     const params = new URLSearchParams(window.location.search);
     const smallBlind = params.get("smallBlind");
     const bigBlind = params.get("bigBlind");
-
+    const playTime = params.get("time");    
+    displayTimer(0, playTime); 
+    
     updateValues(smallBlind, bigBlind);
 }
+

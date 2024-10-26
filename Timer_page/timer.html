@@ -15,25 +15,38 @@
         <a href="../Statistics_page/Stats_file.html"> Statistics </a>
         <a href="../Odds_calculator_page/Odds_file.html"> Odds </a>
     </div>
+
     <div class="content" style="text-align: center;">
         <h1 class="titel">Blinds Timer: </h1>
+
+        <!--Timer related code-->
         <div id="timerContainer">
             <div class="timer" id="timer">00:00</div>
-            <p class="blinds">Small blind: <span id="smallBlindValue"></span></p>
-            <p class="blinds">Big blind: <span id="bigBlindValue"></span></p>
 
+            <!--Small Blind & Small Blind Value-->
+            <div class="small" style="display: inline-block;">
+              <span class="blindValue" id="smallBlindValue"></span> <br>
+              <span class = blindText id="smallBlind">Small blind </span>
+            </div> 
+
+            <!--Small & Big Blind Value-->
+            <div class="big" style="display: inline-block;">
+              <span class="blindValue" id="bigBlindValue"></span> <br>
+              <span class = blindText id="bigBlind">Big blind </span>
+            </div>
+            
             <!--Start & Reset Button-->
-            <div class>
-                <button class="startBtn actionButton" onclick="startTimer()">Start </button>
-                <button class="resetBtn actionButton" onclick="resetTimer()">Reset </button>
-              </div>
+            <div>
+              <button class="startBtn actionButton" onclick="startTimer()">Start </button>
+              <button class="resetBtn actionButton" onclick="resetTimer()">Reset </button>
+            </div>
             <!--Pause & Play Button-->
             <div>
-                <button class="pauseBtn actionButton" onclick="pauseTimer()">Pause </button>
-                <button class="playBtn actionButton" onclick="resumeTimer()">Play </button>
-              </div>
+              <button class="pauseBtn actionButton" onclick="pauseTimer()">Pause </button>
+              <button class="playBtn actionButton" onclick="resumeTimer()">Play </button>
+            </div>
         </div>
-        <div id="NaN_message"></div>
+
         <div id="timeup_message"></div>
     </div>
 
