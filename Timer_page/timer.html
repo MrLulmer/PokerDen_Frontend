@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Poker Timer </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="../style.css" rel="stylesheet" type="text/css">   <!-- Import styles used in every file from style.css (base styles) -->
   <link href="timer.css" rel="stylesheet" type="text/css">         <!-- Import styles specifically only used in this file -->
 </head>
+
 <body>
-    <!--Navbar-->
+    <!-- Navbar -->
     <div class="navbar">
         <a href="../Homepage/Home_file.html"> Homepage </a>
         <a href="configureTimer/configureTimer.html"> Timer </a>
@@ -17,33 +17,35 @@
     </div>
 
     <div class="content" style="text-align: center;">
-        <h1 class="titel">Blinds Timer: </h1>
 
-        <!--Timer related code-->
+        <h1 class="titel">Blinds Timer: </h1>
+        <button class="backBtn" onclick="location.href='configureTimer/configureTimer.html'" > Back </button>
+
+        <!-- Timer related code -->
         <div id="timerContainer">
             <div class="timer" id="timer">00:00</div>
 
-            <!--Small Blind & Small Blind Value-->
+            <!-- Small Blind & Small Blind Value -->
             <div class="small" style="display: inline-block;">
               <span class="blindValue" id="smallBlindValue"></span> <br>
-              <span class = blindText id="smallBlind">Small blind </span>
+              <span class="blindText" id="smallBlind">Small blind </span>
             </div> 
 
-            <!--Small & Big Blind Value-->
+            <!-- Small & Big Blind Value -->
             <div class="big" style="display: inline-block;">
               <span class="blindValue" id="bigBlindValue"></span> <br>
-              <span class = blindText id="bigBlind">Big blind </span>
+              <span class="blindText" id="bigBlind">Big blind </span>
             </div>
             
-            <!--Start & Reset Button-->
-            <div>
+            <!-- Pause & Play Button -->
+            <div class="pausePlay">
+              <button class="playBtn actionButton" onclick="resumeTimer()">Play </button>
+              <button class="pauseBtn actionButton" onclick="pauseTimer()">Pause </button>
+            </div>
+            <!-- Start & Reset Button -->
+            <div class="startReset">
               <button class="startBtn actionButton" onclick="startTimer()">Start </button>
               <button class="resetBtn actionButton" onclick="resetTimer()">Reset </button>
-            </div>
-            <!--Pause & Play Button-->
-            <div>
-              <button class="pauseBtn actionButton" onclick="pauseTimer()">Pause </button>
-              <button class="playBtn actionButton" onclick="resumeTimer()">Play </button>
             </div>
         </div>
 

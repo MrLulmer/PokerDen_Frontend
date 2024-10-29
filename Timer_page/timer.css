@@ -1,6 +1,5 @@
 /* Button */
 button {
-    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
     border: 0;
     border-radius: 12px;
     color: #FFFFFF;
@@ -12,7 +11,6 @@ button {
     line-height: 2.5;
     outline: transparent;
     padding: 0 1rem;
-    margin-top: 10px;
     text-align: center;
     text-decoration: none;
     transition: box-shadow .2s ease-in-out;
@@ -21,8 +19,66 @@ button {
     touch-action: manipulation;
     white-space: nowrap;  
 }
-button:not([disabled]):hover {
-    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+/* Play button */
+.playBtn {
+    background: linear-gradient(to bottom right, #096306, #52a83d);
+    margin-top: 10px;
+}
+.playBtn:not([disabled]):hover {
+    box-shadow: 0 0 .25rem #000, -.125rem -.125rem 1rem #096306, .125rem .125rem 1rem #52a83d;
+}
+/* Pause button */
+.pauseBtn {
+    background: linear-gradient(to bottom right, #bb0728, #f0673d);
+    margin-top: 10px;
+}
+.pauseBtn:not([disabled]):hover {
+    box-shadow: 0 0 .25rem #000, -.125rem -.125rem 1rem #bb0728, .125rem .125rem 1rem #c5370c;
+}
+.pausePlay {
+    margin-bottom: 20px;
+}
+
+/* Start button */
+.startBtn {
+    background: linear-gradient(to bottom right, #0e2792, #5f71da);
+    margin-top: 10px;
+}
+.startBtn:not([disabled]):hover {
+    box-shadow: 0 0 .25rem #000, -.125rem -.125rem 1rem #0e2792, .125rem .125rem 1rem #5f71da;
+}
+/* Reset button */
+.resetBtn {
+    background: linear-gradient(to bottom right, #3f0666, #7828c2);
+    margin-top: 10px;
+}
+.resetBtn:not([disabled]):hover {
+    box-shadow: 0 0 .25rem #000, -.125rem -.125rem 1rem #3f0666, .125rem .125rem 1rem #7828c2;
+}
+
+/* Back button */
+.backBtn {
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    font-size: 16px;
+}
+.backBtn:not([disabled]):hover {
+    box-shadow: 0 0 .25rem #000, -.125rem -.125rem 1rem #EF4765, .125rem .125rem 1rem #FF9A5A;
+}
+@media (max-width: 500px) {
+    .backBtn {
+        border-radius: 100px;
+        position: fixed;
+        bottom: 5%; 
+        left: 5%; 
+    }
+  }
+@media (min-width: 501px) {
+    .backBtn {
+        border-radius: 100px;
+        position: fixed;
+        top: 4px; 
+        left: 5%; 
+    }
 }
 
 /* Timer */

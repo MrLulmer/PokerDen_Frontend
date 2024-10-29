@@ -2,52 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Poker Stats Calculator</title>
-  <link rel="stylesheet" href="Stats_style.css">
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript" src="Stats_script.js"></script>
+  <link href="../style.css" rel="stylesheet" type="text/css">   <!-- Import styles used in every file from style.css (base styles) -->
+  <link rel="stylesheet" href="Stats_style.css">         <!-- Import styles specifically only used in this file -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
 </head>
+
 <body>
-<h1 class="titel">Your Poker Stats:</h1>
+    <!--Navbar-->
+    <div class="navbar">
+      <a href="../Homepage/Home_file.html"> Homepage </a>
+      <a href="../Timer_page/configureTimer/configureTimer.html"> Timer </a>
+      <a href="../Statistics_page/Stats_file.html"> Statistics </a>
+      <a href="../Odds_calculator_page/Odds_file.html"> Odds </a>
+    </div>
 
-<!--Tabel -->
-<table id="pokerStats">
-    <tr>
-      <th>Buy in:</th>
-      <th>Cash return:</th>
-      <th>Profit/Loss:</th>
-      <th>Total at that point:</th>
-    </tr>
-  <tbody>
-    <tr>
-      <td><input type="number" placeholder="Type here" class="buyIn" oninput="calculateProfitLoss()"></td>
-      <td><input type="number" placeholder="Type here" class="cashReturn" oninput="calculateProfitLoss()"></td>
-      <td><input type="number" readonly class="profit_loss"></td>
-      <td><input type="number" readonly class="total_at_time"></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><input type="number" readonly id="total" placeholder="Total"></td>
-    </tr>
-  </tbody>
-</table>
+    <div class="content" style="text-align: center;">
+        <h1 class="titel">Your Poker Stats: </h1>
 
-<!--Add row button -->
-<button id="addRowBtn" onclick="addRow()">Add Row</button>
+        <!--Tabel -->
+        <table id="pokerStats">
+          <thead>
+              <tr>
+                  <th>Buy in:</th>
+                  <th>Cash return:</th>
+                  <th>Profit/Loss:</th>
+                  <th>Total at that point:</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td><input type="number" placeholder="Type here" class="buyIn" oninput="calculateProfitLoss()"></td>
+                  <td><input type="number" placeholder="Type here" class="cashReturn" oninput="calculateProfitLoss()"></td>
+                  <td><input type="number" readonly class="profit_loss"></td>
+                  <td><input type="number" readonly class="total_at_time"></td>
+                  <td class="sessionNum">Session <span id="sessionNumber">1</span></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><input type="number" readonly id="total" placeholder="Total"></td>
+              </tr>
+          </tbody>
+      </table>
+      
+        <!--Add row button -->
+        <button class="addRowBtn" onclick="addRow()">Add Row</button>
+        <!--Insert chart button -->
+        <button class="plotBtn" onclick="plotData()">Plot</button>
+        <!-- Canvas for the chart -->
+        <canvas id="myChart" width="400" height="200"></canvas>
+    </div>
 
-<!--Navbar-->
-<div class="navbar">
-  <a href="../Homepage/Home_file.html"> Homepage </a>
-  <a href="../Timer_page/configureTimer/configureTimer.html"> Timer </a>
-  <a href="../Statistics_page/Stats_file.html"> Statistics </a>
-  <a href="../Odds_calculator_page/Odds_file.html"> Odds </a>
-</div>
-
-<!--Insert Chart -->
-<div id="curve_chart"></div>
-
+    <script type="text/javascript" src="Stats_script.js"></script>
 </body>
 </html>

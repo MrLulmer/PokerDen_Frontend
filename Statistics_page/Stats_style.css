@@ -2,78 +2,46 @@ html{
     font-family: "Arial", sans-serif;
     color: #ffffff;
     }
-    
-.titel {
-    margin-top: 35px;
-
+button {
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;  
 }
-    
-    
-/*Background*/
-body {
-    background-color: #343030;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0;
-    height: 300vh;
-    background-attachment: scroll;
-}
-    
-    
-/*General*/
-body{
-    padding-top: 60px;
-    margin-left: 25px;
-    th, td {
-    padding: 0px 0px;
-        text-align: left;
-    }
 
-    input[type="text"] {
-        width: 100%;
-        box-sizing: border-box;
-    }
-       #curve_chart {
-        margin-top: 15px;
-        margin-right: 10px;
-         }
-
-}
-    
-    
 /*Add Row*/
-body{
-    #addRowBtn {
-        padding: 10px 15px;
-        text-align: center;
-        font-size: 10px;
-        border: none;
-        border-radius: 20px;
-        background-color: #00b84dcf;
-        color: #ffffff;
-        cursor: pointer;
-    }
+.addRowBtn {
+    background: linear-gradient(to bottom right, #107903, #2cd176);
+    margin-top: 10px;
 }
-    
-/*Navbar */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #584d4d; 
-    padding: 15px; 
-    text-align: center; 
+.addRowBtn:not([disabled]):hover {
+    box-shadow: 0 0 .25rem #000, -.125rem -.125rem 1rem #107903, .125rem .125rem 1rem #2cd176;
 }
-    
-.navbar a {
-    color: white; 
-    text-decoration: none; 
-    margin: 0 15px; 
+
+.plotBtn {
+    background: linear-gradient(to bottom right, #813a00, #f0673d);
+    margin-top: 10px;
+    margin-left: 140px;
 }
-    
-.navbar a:hover {
-    color: #ffcc00;
+.plotBtn:not([disabled]):hover {
+    box-shadow: 0 0 .25rem #000, -.125rem -.125rem 1rem #d11204, .125rem .125rem 1rem #c5370c;
 }
-    
+
+#myChart {
+    margin-top: 80px;
+    justify-content: center;
+}
