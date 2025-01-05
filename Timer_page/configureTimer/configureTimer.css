@@ -1,46 +1,57 @@
-.content {
-    width: fit-content;
-}
-
 /* Label for input field */
 label {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; 
+    display: block;
+    margin-bottom: 5px;
 }
 
-/* Input field */
+/* Input field */ /*? Editable fields */
 input {
-    margin: 5px auto 10px 5px;      /* margin: top right bottom left*/
-    border: 2px solid #665F54; 
-    background-color: #E1D3BD; 
-    transition: border-color 0.3s; 
-    padding: 5px; 
-    border-radius: 4px;
+    width: calc(100% - 10px);
+    padding: 8px;
+    margin: 0 auto 15px auto; /* Margin for spacing */
+    border: 1px solid #333; 
+    background-color: #f7f7f7; 
+    color: #333;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    border-radius: 0; /* Sharp corners */
+}
+input:focus {
+    border-color: #ff453a; 
+    outline: none;
 }
 
-/* Submit button */
+/* Submit button */ /*? Editable button */
 #submitBtn {
-    margin-left: 120px;
-    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
-    border: 0;
-    border-radius: 12px;
-    color: #FFFFFF;
+    background: #333;
+    color: #FFF;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
-    display: inline-block;
-    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 2.5;
-    outline: transparent;
-    padding: 0 1rem;
-    margin-top: 10px;
-    text-align: center;
-    text-decoration: none;
-    transition: box-shadow .2s ease-in-out;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;  
+    border-radius: 0; /* Sharp corners */
+    margin-top: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
-#submitBtn:not([disabled]):hover {
-    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+#submitBtn:hover {
+    background: #ff453a;
+    color: #FFF;
+}
+
+/* Content */ /*? More iterations of the content */
+.content {
+    max-width: 400px; 
+    margin: 0 auto;
+}
+
+/* Form container */ /*? Every thing but the Title */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

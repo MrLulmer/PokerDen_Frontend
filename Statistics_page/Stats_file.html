@@ -3,34 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Poker Stats Calculator</title>
-  <link href="../style.css" rel="stylesheet" type="text/css">   <!-- Import styles used in every file from style.css (base styles) -->
-  <link rel="stylesheet" href="Stats_style.css">         <!-- Import styles specifically only used in this file -->
+  <link href="../style.css" rel="stylesheet" type="text/css">   <!-- Stylesheet for every file -->
+  <link rel="stylesheet" href="Stats_style.css">         <!-- Stylesheet for this file -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
 </head>
 
 <body>
     <!--Navbar-->
     <div class="navbar">
-      <a href="../Homepage/Home_file.html"> Homepage </a>
+      <a href="../Homepage/Home_file.html"> Home </a>
       <a href="../Timer_page/configureTimer/configureTimer.html"> Timer </a>
       <a href="../Statistics_page/Stats_file.html"> Statistics </a>
       <a href="../Odds_calculator_page/Odds_file.html"> Odds </a>
     </div>
 
+
+    <!-- Content -->
     <div class="content" style="text-align: center;">
-        <h1 class="titel">Your Poker Stats: </h1>
+      
+        <h1 class="titel">Your Poker Stats </h1>
 
         <!--Tabel -->
         <table id="pokerStats">
+
           <thead>
               <tr>
-                  <th>Buy in:</th>
-                  <th>Cash return:</th>
-                  <th>Profit/Loss:</th>
-                  <th>Total at that point:</th>
+                  <th>Buy in</th>
+                  <th>Cash return</th>
+                  <th>Profit/Loss</th>
+                  <th>Total at that point</th>
               </tr>
           </thead>
+
           <tbody>
               <tr>
                   <td><input type="number" placeholder="Type here" class="buyIn" oninput="calculateProfitLoss()"></td>
@@ -39,6 +43,7 @@
                   <td><input type="number" readonly class="total_at_time"></td>
                   <td class="sessionNum">Session <span id="sessionNumber">1</span></td>
               </tr>
+
               <tr>
                 <td></td>
                 <td></td>
@@ -46,6 +51,7 @@
                 <td><input type="number" readonly id="total" placeholder="Total"></td>
               </tr>
           </tbody>
+
       </table>
       
         <!--Add row button -->
@@ -53,9 +59,14 @@
         <!--Insert chart button -->
         <button class="plotBtn" onclick="plotData()">Plot</button>
         <!-- Canvas for the chart -->
-        <canvas id="myChart" width="400" height="200"></canvas>
+        <canvas id="myChart" width="700" height="300"></canvas>
     </div>
 
     <script type="text/javascript" src="Stats_script.js"></script>
+    
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 | Liam Ulmer </p>
+    </footer>
 </body>
 </html>

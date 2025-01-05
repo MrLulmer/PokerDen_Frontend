@@ -1,118 +1,84 @@
-/* Button */
-button {
-    border: 0;
-    border-radius: 12px;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 2.5;
-    outline: transparent;
-    padding: 0 1rem;
-    text-align: center;
-    text-decoration: none;
-    transition: box-shadow .2s ease-in-out;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;  
-}
-/* Play button */
-.playBtn {
-    background: linear-gradient(to bottom right, #096306, #52a83d);
-    margin-top: 10px;
-}
-.playBtn:not([disabled]):hover {
-    box-shadow: 0 0 .25rem #000, -.125rem -.125rem 1rem #096306, .125rem .125rem 1rem #52a83d;
-}
-/* Pause button */
-.pauseBtn {
-    background: linear-gradient(to bottom right, #bb0728, #f0673d);
-    margin-top: 10px;
-}
-.pauseBtn:not([disabled]):hover {
-    box-shadow: 0 0 .25rem #000, -.125rem -.125rem 1rem #bb0728, .125rem .125rem 1rem #c5370c;
-}
-.pausePlay {
-    margin-bottom: 20px;
-}
-
-/* Start button */
-.startBtn {
-    background: linear-gradient(to bottom right, #0e2792, #5f71da);
-    margin-top: 10px;
-}
-.startBtn:not([disabled]):hover {
-    box-shadow: 0 0 .25rem #000, -.125rem -.125rem 1rem #0e2792, .125rem .125rem 1rem #5f71da;
-}
-/* Reset button */
-.resetBtn {
-    background: linear-gradient(to bottom right, #3f0666, #7828c2);
-    margin-top: 10px;
-}
-.resetBtn:not([disabled]):hover {
-    box-shadow: 0 0 .25rem #000, -.125rem -.125rem 1rem #3f0666, .125rem .125rem 1rem #7828c2;
-}
-
-/* Back button */
-.backBtn {
-    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
-    font-size: 16px;
-}
-.backBtn:not([disabled]):hover {
-    box-shadow: 0 0 .25rem #000, -.125rem -.125rem 1rem #EF4765, .125rem .125rem 1rem #FF9A5A;
-}
-@media (max-width: 500px) {
-    .backBtn {
-        border-radius: 100px;
-        position: fixed;
-        bottom: 5%; 
-        left: 5%; 
-    }
-  }
-@media (min-width: 501px) {
-    .backBtn {
-        border-radius: 100px;
-        position: fixed;
-        top: 4px; 
-        left: 5%; 
-    }
-}
-
-/* Timer */
+/* Timer Section */
 .timer {
-    font-size: 90px;
-    color: #ffffff;
-    margin-top: 64px;
+    font-size: 80px;
+    color: #333;
     text-align: center;
+    margin: 30px 0 20px; 
     width: 100%;
 }
 
-/* Blinds */
-.big {
-    text-align: center;
-    margin-left: 140px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.small {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+/* Blinds Section */ /*? Blind Value and Blind Text are in an Invisable Table */
 .blindText {
-    font-size: 30px;
-    color: #ffffff;
+    font-size: 24px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
 }
 .blindValue {
-    font-size: 50px;
-    color: #ffffff;
+    font-size: 36px;
+    color: #333;
+}
+/* Invisible Table Styling */
+.invisibleTable {
+    border-collapse: separate; /* Border-spacing is applied */
+    border-spacing: 0px; /* Spacing */
+    width: 100%;
+}
+.invisibleTable td {
+    border: none;
+    width: 150px; 
+    height: 50px;
+    text-align: center; 
 }
 
-/* Button Positioning */
+/* Buttons Section */ /*? Editable button */
 .actionButton {
-    margin: 0 10px 15px 10px;
-    width: 100px;
+    width: 120px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #000000;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    border-radius: 0; /* Sharp corners */
+    transition: background-color 0.3s;
+    border: 1px solid #000000;
+}
+.pausePlay, .startReset {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Consistent spacing between buttons */
+    margin: 20px 0;
+}
+/* Start & Reset */
+.startBtn:hover, .resetBtn:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+/* Pause & Play */
+.playBtn{
+    color: #17b978;
+}
+.playBtn:hover{
+    background-color: #17b978;
+    color: #FFFFFF;
+}
+.pauseBtn {
+    color: #ff304f;
+}
+.pauseBtn:hover{
+    background-color: #ff304f;
+    color: #FFFFFF;
+}
+
+/* Time Up Message */
+#timeup_message {
+    font-size: 24px;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
 }

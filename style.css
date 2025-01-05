@@ -1,40 +1,71 @@
-html{
-    font-family: "Arial", sans-serif;
-}
-
 /* General */
-body {
-    background-color: #584d4d;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
+html{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    background-color: #F4F4F4;
     margin: 0;
-
-}
-
-/* Titels */
-.titel {
-    margin-top: 80px;
-    text-align: center;
+    padding: 0;
+    line-height: 1.6;
 }
 
 /* Navbar */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333333cd; 
-    padding: 15px; 
-    text-align: center; 
+    max-width: 960px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #E0E0E0;
+    padding: 10px;
+    border-bottom: 1px solid #CCCCCC;
+    /* Makes the navbar fixed */
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 1000; 
 }
 .navbar a {
-    color: white; 
-    text-decoration: none; 
-    margin: 0 15px; 
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
 }
 .navbar a:hover {
-    color: #ffcc00;
+    color: #ff453a;
+}
+
+/* Content */ 
+/*? All the main info on the site */
+.content {
+    color: #333;
+    line-height: 1.6;
+    max-width: 100%;
+    padding: 20px;
+}
+
+/* Titels */
+.titel {
+    font-size: 36px;
+    margin-top: 15px;
+    margin-bottom: 26px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* General */
+body {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    margin-top: 40px;
+    padding: 5px 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
 }

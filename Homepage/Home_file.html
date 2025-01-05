@@ -3,22 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Poker Stats Calculator</title>
-  <link href="../style.css" rel="stylesheet" type="text/css">   <!-- Import styles used in every file from style.css (base styles) -->
-  <link rel="stylesheet" href="Home_style.css">         <!-- Import styles specifically only used in this file -->
+  <link href="../style.css" rel="stylesheet" type="text/css">   <!-- Stylesheet for every file -->
+  <link href="Home_style.css" rel="stylesheet" >         <!-- Stylesheet for this file -->
 </head>
 
 <body>
-    <h1 class="titel">Homepage </h1>
 
-    <!--Navbar-->
+    <!-- Navbar -->
     <div class="navbar">
-      <a href="../Homepage/Home_file.html"> Homepage </a>
+      <a href="../Homepage/Home_file.html"> Home </a>
       <a href="../Timer_page/configureTimer/configureTimer.html"> Timer </a>
       <a href="../Statistics_page/Stats_file.html"> Statistics </a>
       <a href="../Odds_calculator_page/Odds_file.html"> Odds </a>
     </div>
 
+
+    <!-- Content -->
+    <div class="content">
+ 
+       <h1 class="titel">Texas Hold'em </h1>
+
+      <!-- History -->
+      <div class="paragraph">
+          <h2>History</h2>
+          <p>The history of poker dates back to the late 18th century when the first game similar to poker was played by French colonialists in New Orleans. The game spread up the Mississippi River and out west during the Gold Rush. During the Civil War, it evolved with many additions. It gained a reputation as a "sinner’s game," later fueled by Hollywood’s Wild West depictions. Texas Hold’em, created in Robstown, Texas, during the early 1900s, remained obscure until its Las Vegas launch in the 1970s.</p>
+      </div>
+
+      <!-- Basics -->
+      <div class="paragraph">
+          <h2>The Basics</h2>
+          <p>Texas Hold’em is played with five community cards and two private cards (hole cards). Players aim to make the best possible five-card hand using these cards.</p>
+          <img src="Pictures/Table_L.PNG" alt="Poker Table Layout">
+      </div>
+
+      <!-- Gameplay -->
+      <div class="paragraph">
+          <h2>Gameplay</h2>
+          <h3>Blinds</h3>
+          <p>Markers indicate the dealer, small blind, and big blind. The small blind must post a predetermined amount, and the big blind posts double. The dealer then deals two cards to each player, starting with the small blind.</p>
+          <img src="Pictures/1.png" alt="Blinds Example">
+
+          <h3>Betting Options</h3>
+          <ul>
+              <li><span class="highlight">Bet:</span> Start the betting by placing chips into the pot.</li>
+              <li><span class="highlight">Call:</span> Match the amount bet by the previous player.</li>
+              <li><span class="highlight">Fold:</span> Discard your hand and exit the round.</li>
+              <li><span class="highlight">Raise:</span> Increase the current bet.</li>
+              <li><span class="highlight">Check:</span> Stay in the hand without betting (only if no prior bet has been made).</li>
+          </ul>
+      </div>
+
+      <!-- Pre-Flop -->
+      <div class="paragraph">
+          <h3>Pre-Flop</h3>
+          <p>After receiving hole cards, players can call the big blind, raise, or fold. Starting left of the big blind, no checks are allowed unless you are the big blind.</p>
+          <img src="Pictures/2.png" alt="Pre-Flop Example">
+      </div>
+
+      <!-- Flop -->
+      <div class="paragraph">
+          <h3>The Flop</h3>
+          <p>The dealer reveals three community cards. Betting starts to the left of the dealer button. If no bets have been made, players can check.</p>
+          <img src="Pictures/3.png" alt="Flop Example">
+      </div>
+
+      <!-- Turn -->
+      <div class="paragraph">
+          <h3>The Turn</h3>
+          <p>The dealer reveals a fourth community card. Betting proceeds as in the flop.</p>
+          <img src="Pictures/4.png" alt="Turn Example">
+      </div>
+
+      <!-- River -->
+      <div class="paragraph">
+          <h3>The River</h3>
+          <p>The dealer reveals the fifth and final community card. Betting proceeds as before.</p>
+          <img src="Pictures/5.png" alt="River Example">
+      </div>
+
+      <!-- Showdown -->
+      <div class="paragraph">
+          <h3>Showdown</h3>
+          <p>Remaining players reveal their cards. If no bets occurred in the final round, the player left of the button shows their cards first. The best five-card hand wins the pot.</p>
+          <img src="Pictures/6.png" alt="Showdown Example">
+      </div>
+  </div>
     <script type="text/javascript" src="Home_script.js"></script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 | Liam Ulmer </p>
+    </footer>
 </body>
 </html>

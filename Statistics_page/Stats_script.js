@@ -69,28 +69,28 @@ const myChart = new Chart(ctx, {
     scales: {
       x: {
         grid: {
-          color: 'rgba(255, 255, 255, 0.2)', // Color grid line 
+          color: 'rgba(0, 0, 0, 0.2)', // Color grid line 
           lineWidth: 1 // Thickness 
         },
         ticks: {
-          color: '#FFFFFF', // Color for X-axis labels
+          color: '#000000', // Color for X-axis labels
         }
       },
       y: {
         beginAtZero: true,
         grid: {
-          color: 'rgba(255, 255, 255, 0.2)', // Color grid line
+          color: 'rgba(0, 0, 0, 0.2)', // Color grid line
           lineWidth: 1 // Thickness 
         },
         ticks: {
-          color: '#FFFFFF', // Color for Y-axis labels 
+          color: '#000000', // Color for Y-axis labels 
         }
       }
     },
     plugins: {
       legend: {
         labels: {
-          color: '#FFFFFF', // Color for the label text
+          color: '#000000', // Color for the label text
         }
       }
     }

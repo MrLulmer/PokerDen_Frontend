@@ -1,53 +1,67 @@
-
-/* Basic reset and layout */
-body {
-    font-family: Arial, sans-serif;
+/* Content */ /*? More iterations of the content */
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #333;
-    color: #fff;
-    margin: 0;
+}
+
+/* Sections */ /*? Diffrent players/board */
+.section {
+    background-color: #E0E0E0;
     padding: 20px;
-    }
+    border-radius: 0;
+    margin-bottom: 30px;
+    box-shadow: none;
+    border: 1px solid #333;
+    text-align: left;
+}
 
-    h1 {
-    color: #ffeb3b;
-    margin-bottom: 20px;
-    }
+.section h2 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: bold;
+}
 
-    .section {
-    background-color: #444;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .section h2 {
-    color: #ffeb3b;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    }
-
-    .card-selector {
+.card-selector {
     display: flex;
     gap: 10px;
-    margin-bottom: 10px;
-    }
+    margin-bottom: 20px;
+    justify-content: center;
+}
 
-    .card-dropdown {
-    background-color: #222;
-    color: #ffeb3b;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #555;
-    }
+.card-dropdown {
+    background-color: #ffffff;
+    color: #333;
+    padding: 10px;
+    border-radius: 0;
+    border: 1px solid #cccccc;
+    font-size: 14px;
+    text-transform: uppercase;
+}
 
-    /* Grid layout for Board cards */
-    .board-grid {
+.card-dropdown:focus {
+    border-color: #ff453a;
+    outline: none;
+}
+
+/* Grid layout for Board cards */
+.board-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    margin-top: 10px;
-    }
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.board-grid div {
+    background-color: #ffffff;
+    border: 1px solid #333;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
