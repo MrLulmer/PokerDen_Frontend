@@ -19,28 +19,182 @@
   <!-- Content -->
   <div class="content">
 
-      <h1 class="titel">Configure your timer </h1>
+      <h1 class="titel">Tournament Timer </h1>
+      
+      <h2>Configure Timer</h2>
 
-      <form action="../timer.html" method="GET" onsubmit="handleFormSubmit(event)" id="form">
+      <div class = "configureTimer"> 
+            <form action="../timer.html" method="GET" onsubmit="handleFormSubmit(event)" id="form">
 
-          <div class="labelInputContainer">
-              <label for="smallBlind">Small Blind:</label>
-              <input type="number" name="smallBlind" id="smallBlind" min="1" value="0" max="100000">
-          </div>
+                <div class="labelInputContainer">
+                    <label for="smallBlind">Small Blind:</label>
+                    <input type="number" name="smallBlind" id="smallBlind" min="1" value="0" max="100000">
+                </div>
 
-          <div class="labelInputContainer">
-              <label for="bigBlind">Big Blind:</label>
-              <input type="number" name="bigBlind" id="bigBlind" min="1" value="0" max="100000">
-          </div>
+                <div class="labelInputContainer">
+                    <label for="bigBlind">Big Blind:</label>
+                    <input type="number" name="bigBlind" id="bigBlind" min="1" value="0" max="100000">
+                </div>
 
-          <div class="labelInputContainer">
-              <label for="time">Time:</label>
-              <input type="number" name="time" id="time" min="1" value="0" max="1000">
-          </div>
+                <div class="labelInputContainer">
+                    <label for="time">Time:</label>
+                    <input type="number" name="time" id="time" min="1" value="0" max="1000">
+                </div>
 
-          <button id="submitBtn" type="submit">View Timer</button>
-          
-      </form>
+                <button id="submitBtn" type="submit">View Timer</button>
+                
+            </form>
+        </div>
+
+      <h2>Recomendations </h2>
+      
+      <h3>Sample Blind Timer for 5-15 Players (Medium Pace): </h3>
+
+      <table>
+        <thead>
+            <tr>
+                <th>Level</th>
+                <th>Duration (Minutes)</th>
+                <th>Small Blind</th>
+                <th>Big Blind</th>
+                <th>Big Blind Ante</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>15</td>
+                <td>50</td>
+                <td>100</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>15</td>
+                <td>100</td>
+                <td>200</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>15</td>
+                <td>150</td>
+                <td>300</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>15</td>
+                <td>200</td>
+                <td>400</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>15</td>
+                <td>300</td>
+                <td>600</td>
+                <td>600</td>
+            </tr>
+            <tr class="break-row">
+                <td colspan="5">Chip Count and Refreshment Break</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>15</td>
+                <td>400</td>
+                <td>800</td>
+                <td>800</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>15</td>
+                <td>600</td>
+                <td>1,200</td>
+                <td>1,200</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>15</td>
+                <td>800</td>
+                <td>1,600</td>
+                <td>1,600</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>15</td>
+                <td>1,000</td>
+                <td>2,000</td>
+                <td>2,000</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>15</td>
+                <td>1,500</td>
+                <td>3,000</td>
+                <td>3,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+      <h3>Turbo Format (Faster Games, Any Number of People): </h3>
+
+      <table>
+        <thead>
+            <tr>
+                <th>Level</th>
+                <th>Duration (Minutes)</th>
+                <th>Small Blind</th>
+                <th>Big Blind</th>
+                <th>Big Blind Ante</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>10</td>
+                <td>100</td>
+                <td>200</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>10</td>
+                <td>200</td>
+                <td>400</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>10</td>
+                <td>300</td>
+                <td>600</td>
+                <td>600</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>10</td>
+                <td>500</td>
+                <td>1,000</td>
+                <td>1,000</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>10</td>
+                <td>800</td>
+                <td>1,600</td>
+                <td>1,600</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>10</td>
+                <td>1,200</td>
+                <td>2,400</td>
+                <td>2,400</td>
+            </tr>
+        </tbody>
+    </table>
+
   </div>
 
   <!--! Script to put info in URL -->

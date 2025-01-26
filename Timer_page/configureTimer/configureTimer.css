@@ -1,3 +1,18 @@
+/* Text */ 
+h2 {
+    font-size: 30px;
+    margin-top: 40px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+/* Chapter headings */
+h3 {
+    font-size: 23px;
+    margin-top: 30px;
+    border-bottom: 1px solid #333;
+}
+
 /* Label for input field */
 label {
     font-size: 18px;
@@ -36,6 +51,7 @@ input:focus {
     cursor: pointer;
     border-radius: 0; /* Sharp corners */
     margin-top: 20px;
+    margin-bottom: 40px;
     transition: background-color 0.3s, color 0.3s;
 }
 #submitBtn:hover {
@@ -43,15 +59,48 @@ input:focus {
     color: #FFF;
 }
 
-/* Content */ /*? More iterations of the content */
-.content {
-    max-width: 400px; 
-    margin: 0 auto;
-}
-
 /* Form container */ /*? Every thing but the Title */
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Table design */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 2px solid #dee2e6;
+}
+th, td {
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+th {
+    background-color: #e9ecef;
+    color: #333;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+tr:hover {
+    background-color: #f1f3f5;
+}
+td {
+    color: #333;
+}
+.break-row {
+    background-color: #ffe8a1;
+    font-weight: bold;
+    text-transform: uppercase;
 }
