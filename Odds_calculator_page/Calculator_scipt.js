@@ -175,10 +175,10 @@ function calculatePokerOdds(player1Cards, player2Cards, communityCards) {
         tie: (ties / iterations * 100).toFixed(2) + "%"
     };
 
+    // Display results on the website
+    document.getElementById("player1Win").innerText = "Chance that player 1 wins the game: " + results.player1;
+    document.getElementById("player2Win").innerText = "Chance that player 2 wins the game: " + results.player2;
+    document.getElementById("player1And2Tie").innerText = "Change for a tie: " + results.tie;
+
     return results;
 }
-
-// Start the process
-const result = checkOdds();
-console.log("Final Results:", result);
-
