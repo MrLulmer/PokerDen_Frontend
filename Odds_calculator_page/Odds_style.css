@@ -16,14 +16,6 @@
     text-align: left;
 }
 
-.section h2 {
-    color: #333;
-    font-size: 18px;
-    margin-bottom: 15px;
-    letter-spacing: 2px;
-    text-transform: bold;
-}
-
 .card-selector {
     display: flex;
     gap: 10px;
@@ -79,3 +71,40 @@
   .card-dropdown {
     color: inherit;
   }
+
+  button {
+    background: #333;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    display: block;
+    margin: 20px auto;
+}
+
+button:hover {
+    background: #ff453a;
+}
+
+.result {
+    padding: 20px;
+    background: #E0E0E0;
+    border: 1px solid #333;
+    text-align: center;
+    width: 300px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.result span {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #333;
+}

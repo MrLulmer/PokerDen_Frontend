@@ -176,9 +176,9 @@ function calculatePokerOdds(player1Cards, player2Cards, communityCards) {
     };
 
     // Display results on the website
-    document.getElementById("player1Win").innerText = "Chance that player 1 wins the game: " + results.player1;
-    document.getElementById("player2Win").innerText = "Chance that player 2 wins the game: " + results.player2;
-    document.getElementById("player1And2Tie").innerText = "Change for a tie: " + results.tie;
+    document.getElementById("player1Win").innerText = results.player1;
+    document.getElementById("player2Win").innerText = results.player2;
+    document.getElementById("player1And2Tie").innerText = results.tie;
 
     return results;
 }

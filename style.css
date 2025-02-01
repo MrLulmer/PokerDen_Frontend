@@ -8,6 +8,20 @@ html{
     line-height: 1.6;
 }
 
+h1 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
 /* Navbar */
 .navbar {
     max-width: 960px;

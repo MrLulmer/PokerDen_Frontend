@@ -20,28 +20,22 @@ const state = {
   
   // Update a selection and sync with URL
   updateSelection(dropdownId, value) {
-    this.selections.set(dropdownId, value);
-    this.syncToURL();
-  },
-  
-  // Sync current state to URL
-  syncToURL() {
     const params = new URLSearchParams(window.location.search);
     
-    // Clear existing card parameters
-    Array.from(params.keys())
-      .filter(key => key.match(/^(p\d+c\d+|b\d+)$/))
-      .forEach(key => params.delete(key));
+    if (!value || value === "") {
+      this.selections.delete(dropdownId);
+      params.delete(dropdownId);
+    } else {
+      this.selections.set(dropdownId, value);
+      params.set(dropdownId, value);
+    }
     
-    // Add current selections
-    this.selections.forEach((value, key) => {
-      if (value) {
-        params.set(key, value);
-      }
-    });
-    
-    // Update URL without reload
-    const newUrl = `${window.location.pathname}${params.toString() ? '?' + params.toString() : ''}`;
+    // Update URL, removing query string if no parameters
+    let newUrl = window.location.pathname;
+    const queryString = params.toString();
+    if (queryString) {
+      newUrl += '?' + queryString;
+    }
     window.history.pushState({}, '', newUrl);
   },
   
@@ -50,12 +44,11 @@ const state = {
     const params = new URLSearchParams(window.location.search);
     this.selections.clear();
     
-    // Load each parameter that matches our expected format
-    Array.from(params.entries()).forEach(([key, value]) => {
+    for (const [key, value] of params.entries()) {
       if (key.match(/^(p\d+c\d+|b\d+)$/) && CARDS.all.includes(value)) {
         this.selections.set(key, value);
       }
-    });
+    }
   }
 };
 
@@ -111,7 +104,7 @@ function initializeCardSelectors() {
         (CARDS.isRed(newValue) ? 'red' : 'black') : 
         'black';
       
-      // Update state
+      // Update state and URL
       state.updateSelection(paramKey, newValue);
       
       // Update all dropdowns
