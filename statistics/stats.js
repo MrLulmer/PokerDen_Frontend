@@ -136,31 +136,3 @@ function plotData() {
   // Refresh the chart
   myChart.update();
 }
-
-// Get data from backend
-async function getDataFromBackend() {
-  try {
-    const response = await fetch('http://127.0.0.1:5000/about', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    if (response.ok) {
-      successMessage('🎉 Success! You nailed it!');
-    }
-
-    const data = await response.json();
-    console.log(data); // Do something with the data
-  } catch (error) {
-    console.error('Error fetching data from backend:', error);
-  }
-}
-function successMessage(message) {
-  console.log('%c' + message, 'color: green; font-weight: bold;');
-}
