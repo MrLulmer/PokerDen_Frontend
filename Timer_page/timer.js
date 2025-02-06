@@ -44,7 +44,7 @@ function startTimer() {
                 updateValues(smallBlind, bigBlind);
 
                 // Plays sound
-                const sound = new Audio('Time_over.mp3');
+                const sound = new Audio('time_over.mp3');
                 sound.play();
             
                 // Blind rase message 
