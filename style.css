@@ -30,12 +30,12 @@ h2 {
     background-color: #E0E0E0;
     padding: 10px;
     border-bottom: 1px solid #CCCCCC;
-    /* Makes the navbar fixed */
     position: fixed; 
     top: 0; 
     width: 100%; 
     z-index: 1000; 
 }
+
 .navbar a {
     text-decoration: none;
     color: #333;
@@ -43,17 +43,30 @@ h2 {
     text-transform: uppercase;
     font-size: 14px;
 }
+
 .navbar a:hover {
     color: #ff453a;
 }
 
 /* Content */ 
-/*? All the main info on the site */
 .content {
     color: #333;
     line-height: 1.6;
     max-width: 100%;
     padding: 20px;
+}
+
+/* Media Query for Small Screens */
+@media screen and (max-width: 600px) {
+    .navbar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+    }
 }
 
 /* Titels */
