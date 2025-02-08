@@ -10,73 +10,81 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <div class="navbar">
-      <a href="../index.html"> Home </a>
-      <a href="../timer/configureTimer/configureTimer.html"> Timer </a>
-      <a href="../statistics/stats.html"> Statistics </a>
-      <a href="../oddsCalculator/odds.html"> Odds </a>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="../index.html"> Home </a>
+    <a href="../timer/configureTimer/configureTimer.html"> Timer </a>
+    <a href="../statistics/stats.html"> Statistics </a>
+    <a href="../oddsCalculator/odds.html"> Odds </a>
+  </div>
+
+  <!-- Content -->
+  <div class="content" style="text-align: center;">
+
+    <h1 class="titel">Blinds Timer </h1>
+
+    <!-- Timer related code -->
+    <div class="timer" id="timer">00:00</div>
+    <!-- Message -->
+    <div id="timeup_message"></div>
+    <!-- Values -->
+    <div class="values">
+      <table class="invisibleTable1">
+        <tr>
+          <td></td>
+          <!-- Small Blind & Small Blind Value -->
+          <td class="blindValue">
+            <span id="smallBlindValue"></span>
+          </td>
+          <td class="blindValue">
+            <span id="bigBlindValue"></span>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <!-- Small & Big Blind Text -->
+          <td class="blindText">
+            <span id="smallBlind">Small blind </span>
+          </td>
+          <td class="blindText">
+            <span id="bigBlind">Big blind </span>
+          </td>
+          <td></td>
+        </tr>
+      </table>
     </div>
 
-    <!-- Content -->
-    <div class="content" style="text-align: center;">
+    <!-- Pause & Play Button -->
+    <table class="invisibleTable2">
+      <tr>
+        <td></td>
+        <td>
+          <button class="playBtn actionButton" onclick="resumeTimer()">
+            <span class="material-symbols-outlined pause-icon">play_arrow</span>
+          </button>
+        </td>
+        <td>
+          <button class="pauseBtn actionButton" onclick="pauseTimer()">
+            <span class="material-symbols-outlined play-icon">pause</span>
+          </button>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button class="startBtn actionButton" onclick="startTimer()">Start </button> </td>
+        <td><button class="resetBtn actionButton" onclick="resetTimer()">Back </button></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
 
-        <h1 class="titel">Blinds Timer </h1>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 | Liam Ulmer </p>
+  </footer>
 
-        <!-- Timer related code -->
-        <div id="timerContainer">
-            <div class="timer" id="timer">00:00</div>
-            
-            <!-- Message -->
-            <div id="timeup_message"></div>
-
-            <!-- Values -->
-            <div class="values">
-              <table class="invisibleTable">
-                <tr>
-                  <!-- Small Blind & Small Blind Value -->
-                  <td class="blindValue">
-                    <span id="smallBlindValue"></span>
-                  </td>
-                  <td class="blindValue">
-                    <span id="bigBlindValue"></span>
-                  </td>
-                </tr>
-                <tr>
-                  <!-- Small & Big Blind Text -->
-                  <td class="blindText">
-                    <span id="smallBlind">Small blind </span>
-                  </td>
-                  <td class="blindText">
-                    <span id="bigBlind">Big blind </span>
-                  </td>
-                </tr>
-              </table>
-            </div>
-            
-            <!-- Pause & Play Button -->
-            <div class="pausePlay">
-              <button class="playBtn actionButton" onclick="resumeTimer()">
-                <span class="material-symbols-outlined pause-icon">play_arrow</span>
-              </button>
-              <button class="pauseBtn actionButton" onclick="pauseTimer()">
-                <span class="material-symbols-outlined play-icon">pause</span>
-              </button>
-            </div>
-
-            <!-- Start & Reset Button -->
-            <div class="startReset">
-              <button class="startBtn actionButton" onclick="startTimer()">Start </button>
-              <button class="resetBtn actionButton" onclick="resetTimer()">Back </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 | Liam Ulmer </p>
-    </footer>
-
-    <script type="text/javascript" src="timer.js"></script> <!-- JavaScript for this file -->
+  <script type="text/javascript" src="timer.js"></script> <!-- JavaScript for this file -->
 </body>
 </html>

@@ -28,28 +28,14 @@ th {
 /* Input field */ /*? Editable fields */
 input[type="number"] {
     width: 100%;
-    padding: 8px;
-    border: none;
-    font-size: 14px;
-    box-sizing: border-box;
     border: 1px solid #FFFFFF; 
-}
-input:focus {
-    border-color: #ff453a; 
-    outline: none;
 }
 
 /* Buttons */ /*? Editable button */
 .addRowBtn, .plotBtn {
-    background-color: #333;
-    color: #FFFFFF;
-    border: none;
+    font-size: 15px;
     padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.2s;
+    margin: 20px auto;
 }
 .addRowBtn:hover {
     background: #ff453a;
@@ -68,7 +54,6 @@ input:focus {
     border: 1px solid #333;
     background-color: #ffffff;
 }
-
 canvas {
     display: block;
     margin: 40px auto;

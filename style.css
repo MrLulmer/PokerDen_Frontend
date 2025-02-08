@@ -8,20 +8,6 @@ html{
     line-height: 1.6;
 }
 
-h1 {
-    color: #333;
-    font-size: 18px;
-    margin-bottom: 15px;
-    letter-spacing: 2px;
-}
-
-h2 {
-    color: #333;
-    font-size: 18px;
-    margin-bottom: 15px;
-    letter-spacing: 2px;
-}
-
 /* Navbar */
 .navbar {
     max-width: 960px;
@@ -35,18 +21,45 @@ h2 {
     width: 100%; 
     z-index: 1000; 
 }
-
 .navbar a {
     text-decoration: none;
+    letter-spacing: 2px;
     color: #333;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 14px;
 }
-
 .navbar a:hover {
     color: #ff453a;
 }
+
+/* Titels */
+.titel {
+    font-size: 36px;
+    margin-top: 15px;
+    margin-bottom: 26px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-weight: bold;
+}
+/* Headers */
+h2 {
+    margin-top: 20px;
+    color: #333;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #333;
+}
+h3 {
+    margin-top: 16px;
+    color: #333;
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    border-bottom: 1.5px solid #333;
+}
+/*! h4 is undefiened in this document */
 
 /* Content */ 
 .content {
@@ -54,6 +67,32 @@ h2 {
     line-height: 1.6;
     max-width: 100%;
     padding: 20px;
+}
+
+/* Input field */ /*? type, width and border still need to be defined */
+input {
+    padding: 8px;
+    border: none;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+input:focus {
+    border-color: #ff453a; 
+    outline: none;
+}
+
+/* Basic Button */
+button { /*? Button neads; font-size, padding & margine (hover if needed) */
+    background: #333;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    display: block;
+    border: 1px solid #000000;
 }
 
 /* Media Query for Small Screens */
@@ -67,15 +106,6 @@ h2 {
         width: 100%;
         padding: 10px;
     }
-}
-
-/* Titels */
-.titel {
-    font-size: 36px;
-    margin-top: 15px;
-    margin-bottom: 26px;
-    text-align: center;
-    font-weight: bold;
 }
 
 /* General */

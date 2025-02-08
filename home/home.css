@@ -1,24 +1,4 @@
-/* Subtitle (h2) & chapter headings (h3) */
-h2, h3 {
-    margin: 0 0 10px;
-    font-weight: bold;
-    line-height: 1.2;
-}
-/* Subtitle */ 
-h2 {
-    font-size: 30px;
-    margin-top: 40px;
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
-}
-/* Chapter headings */
-h3 {
-    font-size: 23px;
-    margin-top: 30px;
-    border-bottom: 1px solid #333;
-}
-
-/* List */
+/* List (Text) */
 ul {
     list-style: none;
     padding: 0;

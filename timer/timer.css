@@ -20,12 +20,12 @@
     color: #333;
 }
 /* Invisible Table Styling */
-.invisibleTable {
+table {
     border-collapse: separate; /* Border-spacing is applied */
     border-spacing: 0px; /* Spacing */
     width: 100%;
 }
-.invisibleTable td {
+table td {
     border: none;
     width: 150px; 
     height: 50px;
@@ -34,24 +34,14 @@
 
 /* Buttons Section */ /*? Editable button */
 .actionButton {
-    width: 120px;
+    font-size: 15px;
     padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: #000000;
-    color: #FFFFFF;
-    cursor: pointer;
-    border: none;
-    border-radius: 0; /* Sharp corners */
-    transition: background-color 0.3s;
-    border: 1px solid #000000;
+    width: 120px;
+    margin: 20px auto;
 }
 .pausePlay, .startReset {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Consistent spacing between buttons */
-    margin: 20px 0;
 }
 /* Start & Reset */
 .startBtn:hover, .resetBtn:hover {

@@ -1,18 +1,3 @@
-/* Text */ 
-h2 {
-    font-size: 30px;
-    margin-top: 40px;
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
-}
-
-/* Chapter headings */
-h3 {
-    font-size: 23px;
-    margin-top: 30px;
-    border-bottom: 1px solid #333;
-}
-
 /* Label for input field */
 label {
     font-size: 18px;
@@ -25,34 +10,16 @@ label {
 /* Input field */ /*? Editable fields */
 input {
     width: calc(100% - 10px);
-    padding: 8px;
     margin: 0 auto 15px auto; /* Margin for spacing */
     border: 1px solid #333; 
     background-color: #f7f7f7; 
-    color: #333;
-    font-size: 14px;
-    transition: border-color 0.3s;
-    border-radius: 0; /* Sharp corners */
-}
-input:focus {
-    border-color: #ff453a; 
-    outline: none;
 }
 
 /* Submit button */ /*? Editable button */
 #submitBtn {
-    background: #333;
-    color: #FFF;
-    border: 1px solid #333;
-    padding: 10px 20px;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    border-radius: 0; /* Sharp corners */
-    margin-top: 20px;
-    margin-bottom: 40px;
-    transition: background-color 0.3s, color 0.3s;
+    font-size: 18px;
+    padding: 12px 24px;
+    margin: 20px auto;
 }
 #submitBtn:hover {
     background: #ff453a;

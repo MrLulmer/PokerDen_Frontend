@@ -5,6 +5,15 @@
     align-items: center;
 }
 
+/* Headers */
+h4 {
+    margin-top: 20px;
+    color: #333;
+    font-size: 25px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
 /* Sections */ /*? Diffrent players/board */
 .section {
     background-color: #E0E0E0;
@@ -15,14 +24,12 @@
     border: 1px solid #333;
     text-align: left;
 }
-
 .card-selector {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
     justify-content: center;
 }
-
 .card-dropdown {
     background-color: #ffffff;
     color: #333;
@@ -32,7 +39,6 @@
     font-size: 14px;
     text-transform: uppercase;
 }
-
 .card-dropdown:focus {
     border-color: #ff453a;
     outline: none;
@@ -45,7 +51,6 @@
     gap: 15px;
     margin-top: 20px;
 }
-
 .board-grid div {
     background-color: #ffffff;
     border: 1px solid #333;
@@ -72,24 +77,17 @@
     color: inherit;
   }
 
-  button {
-    background: #333;
-    color: white;
+/* Calculate button */
+button {
     font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    border: none;
     padding: 12px 24px;
-    cursor: pointer;
-    letter-spacing: 1px;
-    display: block;
     margin: 20px auto;
 }
-
 button:hover {
     background: #ff453a;
 }
 
+/* Result box */
 .result {
     padding: 20px;
     background: #E0E0E0;
@@ -100,7 +98,6 @@ button:hover {
     font-weight: bold;
     margin: 0 auto;
 }
-
 .result span {
     background-color: #ffffff;
     padding: 10px;
