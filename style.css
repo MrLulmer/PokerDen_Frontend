@@ -95,19 +95,6 @@ button { /*? Button neads; font-size, padding & margine (hover if needed) */
     border: 1px solid #000000;
 }
 
-/* Media Query for Small Screens */
-@media screen and (max-width: 600px) {
-    .navbar {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        justify-items: center;
-        align-items: center;
-        width: 100%;
-        padding: 10px;
-    }
-}
-
 /* General */
 body {
     max-width: 960px;
