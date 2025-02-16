@@ -113,3 +113,27 @@ footer {
     width: 100%;
     height: auto;
 }
+
+/* Media query for screens smaller than 1000 px */
+@media screen and (max-width: 1000px) {
+    body {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar {
+        max-width: 100%;
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .content {
+        max-width: 100%;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        margin-top: 60px; /* Add space for fixed navbar */
+    }
+}
