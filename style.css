@@ -105,7 +105,7 @@ body {
 /* Footer */
 footer {
     background-color: #333;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     margin-top: 40px;
     padding: 5px 0;
@@ -113,7 +113,17 @@ footer {
     width: 100%;
     height: auto;
 }
-
+#terms {
+    color: #ffffff;
+    text-decoration: none;
+    text-decoration: underline;
+}
+#terms:hover {
+    color: #ff453a;
+}
+#email{
+    text-decoration: underline;
+}
 /* Media query for screens smaller than 1000 px */
 @media screen and (max-width: 1000px) {
     body {
