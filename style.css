@@ -59,7 +59,15 @@ h3 {
     margin-bottom: 5px;
     border-bottom: 1.5px solid #333;
 }
-/*! h4 is undefiened in this document */
+h4 {
+    margin-top: 13px;
+    color: #333;
+    font-size: 19px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    border-bottom: 1.2px solid #333;
+}
+/*! h5 is undefiened in this document */
 
 /* Content */ 
 .content {
@@ -121,9 +129,24 @@ footer {
 #terms:hover {
     color: #ff453a;
 }
+
+/* Special ID's */
 #email{
     text-decoration: underline;
 }
+#date {
+    margin-top: 16px;
+    color: #333;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    border-bottom: 0px;
+}
+#link {
+    color: #413a9b;
+    text-decoration: underline;
+}
+
 /* Media query for screens smaller than 1000 px */
 @media screen and (max-width: 1000px) {
     body {
