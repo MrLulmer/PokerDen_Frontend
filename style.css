@@ -170,3 +170,23 @@ footer {
         margin-top: 60px; /* Add space for fixed navbar */
     }
 }
+@media screen and (max-width: 768px) {
+    p {
+        font-size: 13.5px;
+    }
+    /* Titels */
+    .titel {
+        font-size: 25px;
+    }
+    /* Headers */
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    h4 {
+        font-size: 15px;
+    }
+
+}

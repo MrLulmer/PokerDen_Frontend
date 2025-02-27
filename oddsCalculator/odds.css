@@ -6,10 +6,10 @@
 }
 
 /* Headers */
-h4 {
+h5 {
     margin-top: 20px;
     color: #333;
-    font-size: 25px;
+    font-size: 19px;
     letter-spacing: 2px;
     margin-bottom: 10px;
 }
@@ -104,4 +104,18 @@ button:hover {
     border-radius: 0;
     box-shadow: none;
     border: 1px solid #333;
+}
+
+/* Responsive Design: Stack selectors for smaller screens */
+@media (max-width: 768px) {
+    .card-selector {
+        flex-direction: column;
+        align-items: center;
+    }
+    .board-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    h5 {
+        font-size: 15px;
+    }
 }

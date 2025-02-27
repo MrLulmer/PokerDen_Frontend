@@ -44,6 +44,24 @@ function checkOdds() {
 
     console.log("After conversion:", player1Cards, player2Cards, communityCards);
 
+    // Validate cards before calculation
+    if (player1Cards.length !== 2 || player2Cards.length !== 2) {
+        console.error("Each player must have exactly 2 cards");
+        return {
+            error: "Each player must have exactly 2 cards"
+        };
+    }
+
+    // Check for duplicate cards
+    const allCards = [...player1Cards, ...player2Cards, ...communityCards];
+    const uniqueCards = new Set(allCards);
+    if (uniqueCards.size !== allCards.length) {
+        console.error("Duplicate cards detected");
+        return {
+            error: "Duplicate cards detected"
+        };
+    }
+
     // Immediately calculate odds after getting the cards
     const odds = calculatePokerOdds(player1Cards, player2Cards, communityCards);
     console.log("Calculated Odds:", odds);
@@ -77,69 +95,211 @@ function calculatePokerOdds(player1Cards, player2Cards, communityCards) {
         return deck;
     };
 
+    // Card value mapping
+    const cardValueMap = {
+        '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 
+        'T': 10, 'J': 11, 'Q': 12, 'K': 13, 'A': 14
+    };
+
+    // Convert card to value and suit
+    const parseCard = (card) => {
+        const value = cardValueMap[card[0]];
+        const suit = card[1];
+        return { value, suit };
+    };
     
-    // Check for straight
-    const checkStraight = (values) => {
-        values.sort((a, b) => a - b);
-        if (values.includes(14)) {
-            const aceLowValues = [...values.filter(v => v !== 14), 1];
-            aceLowValues.sort((a, b) => a - b);
-            let isAceLowStraight = true;
-            for (let i = 0; i < aceLowValues.length - 1; i++) {
-                if (aceLowValues[i + 1] - aceLowValues[i] !== 1) {
-                    isAceLowStraight = false;
+    // Improved hand evaluation that returns a detailed hand ranking
+    const evaluateHand = (cards) => {
+        if (cards.length < 5) return { rank: 0, value: [] }; // Invalid hand
+
+        // Parse cards
+        const parsedCards = cards.map(parseCard);
+        
+        // Group by values and suits
+        const valueGroups = {};
+        const suitGroups = {};
+        
+        parsedCards.forEach(card => {
+            valueGroups[card.value] = (valueGroups[card.value] || 0) + 1;
+            suitGroups[card.suit] = (suitGroups[card.suit] || 0) + 1;
+        });
+        
+        // Sort values by frequency (high to low), then by card value (high to low)
+        const valueEntries = Object.entries(valueGroups)
+            .map(([value, count]) => ({ value: parseInt(value), count }))
+            .sort((a, b) => 
+                b.count - a.count || 
+                b.value - a.value
+            );
+        
+        // Check for straight
+        const uniqueValues = [...new Set(parsedCards.map(card => card.value))].sort((a, b) => a - b);
+        
+        let isStraight = false;
+        let straightHighCard = 0;
+        
+        // Regular straight check
+        for (let i = 0; i <= uniqueValues.length - 5; i++) {
+            const consecutive = uniqueValues.slice(i, i + 5);
+            if (consecutive[4] - consecutive[0] === 4) {
+                isStraight = true;
+                straightHighCard = consecutive[4];
+                break;
+            }
+        }
+        
+        // Check for A-5 straight
+        if (!isStraight && uniqueValues.includes(14)) {
+            const aceLowValues = uniqueValues.filter(v => v === 2 || v === 3 || v === 4 || v === 5 || v === 14);
+            if (aceLowValues.length >= 5) {
+                isStraight = true;
+                straightHighCard = 5; // High card is 5 in A-5 straight
+            }
+        }
+        
+        // Check for flush
+        const flushSuit = Object.entries(suitGroups)
+            .find(([suit, count]) => count >= 5);
+        
+        const isFlush = !!flushSuit;
+        
+        // Get all cards of the flush suit
+        const flushCards = isFlush 
+            ? parsedCards
+                .filter(card => card.suit === flushSuit[0])
+                .map(card => card.value)
+                .sort((a, b) => b - a)
+            : [];
+        
+        // Straight flush check
+        let isStraightFlush = false;
+        let straightFlushHighCard = 0;
+        
+        if (isFlush && isStraight) {
+            const flushCardValues = [...new Set(flushCards)].sort((a, b) => a - b);
+            
+            // Regular straight flush check
+            for (let i = 0; i <= flushCardValues.length - 5; i++) {
+                const consecutive = flushCardValues.slice(i, i + 5);
+                if (consecutive[4] - consecutive[0] === 4) {
+                    isStraightFlush = true;
+                    straightFlushHighCard = consecutive[4];
                     break;
                 }
             }
-            if (isAceLowStraight) return true;
-        }
-        let currentStreak = 1;
-        let maxStreak = 1;
-        for (let i = 1; i < values.length; i++) {
-            if (values[i] - values[i-1] === 1) {
-                currentStreak++;
-                maxStreak = Math.max(maxStreak, currentStreak);
-            } else if (values[i] - values[i-1] === 0) {
-                continue;
-            } else {
-                currentStreak = 1;
+            
+            // Check for A-5 straight flush
+            if (!isStraightFlush && flushCardValues.includes(14)) {
+                const aceLowValues = flushCardValues.filter(v => v === 2 || v === 3 || v === 4 || v === 5 || v === 14);
+                if (aceLowValues.length >= 5) {
+                    isStraightFlush = true;
+                    straightFlushHighCard = 5; // High card is 5 in A-5 straight flush
+                }
             }
         }
-        return maxStreak >= 5;
+        
+        // Royal flush check
+        const isRoyalFlush = isStraightFlush && straightFlushHighCard === 14;
+        
+        // Get pairs, three of a kinds, four of a kinds
+        const quads = valueEntries.filter(entry => entry.count === 4).map(entry => entry.value);
+        const trips = valueEntries.filter(entry => entry.count === 3).map(entry => entry.value);
+        const pairs = valueEntries.filter(entry => entry.count === 2).map(entry => entry.value);
+        
+        // Get kickers (single cards, sorted high to low)
+        let kickers = valueEntries
+            .filter(entry => entry.count === 1)
+            .map(entry => entry.value)
+            .sort((a, b) => b - a);
+        
+        // Determine hand rank and values
+        if (isRoyalFlush) {
+            return { rank: 9, values: [14] }; // Royal Flush
+        }
+        
+        if (isStraightFlush) {
+            return { rank: 8, values: [straightFlushHighCard] }; // Straight Flush
+        }
+        
+        if (quads.length > 0) {
+            // Four of a Kind with highest kicker
+            const remainingValues = [...trips, ...pairs, ...kickers].sort((a, b) => b - a);
+            return { 
+                rank: 7, 
+                values: [quads[0], remainingValues[0]] 
+            };
+        }
+        
+        if (trips.length > 0 && pairs.length > 0) {
+            // Full House (highest trips + highest pair)
+            return { 
+                rank: 6, 
+                values: [trips[0], pairs[0]] 
+            };
+        }
+        
+        if (isFlush) {
+            // Flush (top 5 cards of the flush)
+            return { 
+                rank: 5, 
+                values: flushCards.slice(0, 5) 
+            };
+        }
+        
+        if (isStraight) {
+            // Straight
+            return { 
+                rank: 4, 
+                values: [straightHighCard] 
+            };
+        }
+        
+        if (trips.length > 0) {
+            // Three of a Kind with top 2 kickers
+            const remainingValues = [...pairs, ...kickers].sort((a, b) => b - a);
+            return { 
+                rank: 3, 
+                values: [trips[0], ...remainingValues.slice(0, 2)] 
+            };
+        }
+        
+        if (pairs.length >= 2) {
+            // Two Pair with highest kicker
+            const remainingValues = [...kickers].sort((a, b) => b - a);
+            return { 
+                rank: 2, 
+                values: [pairs[0], pairs[1], remainingValues[0]] 
+            };
+        }
+        
+        if (pairs.length === 1) {
+            // One Pair with top 3 kickers
+            const remainingValues = [...kickers].sort((a, b) => b - a);
+            return { 
+                rank: 1, 
+                values: [pairs[0], ...remainingValues.slice(0, 3)] 
+            };
+        }
+        
+        // High Card (top 5 cards)
+        return { 
+            rank: 0, 
+            values: uniqueValues.sort((a, b) => b - a).slice(0, 5) 
+        };
     };
 
-    // Evaluate hand strength
-    const evaluateHand = (cards) => {
-        const cardValues = cards.map(card => {
-            const value = card[0];
-            return value === 'T' ? 10 :
-                   value === 'J' ? 11 :
-                   value === 'Q' ? 12 :
-                   value === 'K' ? 13 :
-                   value === 'A' ? 14 :
-                   parseInt(value);
-        });
-
-        const suits = cards.map(card => card[1]);
-        const isFlush = suits.filter(suit => suit === suits[0]).length >= 5;
-        const isStraight = checkStraight(cardValues);
-
-        const valueCounts = {};
-        cardValues.forEach(value => {
-            valueCounts[value] = (valueCounts[value] || 0) + 1;
-        });
-
-        const counts = Object.values(valueCounts).sort((a, b) => b - a);
+    // Compare two hands
+    const compareHands = (hand1, hand2) => {
+        if (hand1.rank > hand2.rank) return 1;
+        if (hand1.rank < hand2.rank) return -1;
         
-        if (isFlush && isStraight) return 8;
-        if (counts[0] === 4) return 7;
-        if (counts[0] === 3 && counts[1] === 2) return 6;
-        if (isFlush) return 5;
-        if (isStraight) return 4;
-        if (counts[0] === 3) return 3;
-        if (counts[0] === 2 && counts[1] === 2) return 2;
-        if (counts[0] === 2) return 1;
-        return 0;
+        // Same rank, compare values
+        for (let i = 0; i < hand1.values.length; i++) {
+            if (hand1.values[i] > hand2.values[i]) return 1;
+            if (hand1.values[i] < hand2.values[i]) return -1;
+        }
+        
+        return 0; // Tie
     };
 
     // Get remaining deck
@@ -152,7 +312,7 @@ function calculatePokerOdds(player1Cards, player2Cards, communityCards) {
     let player1Wins = 0;
     let player2Wins = 0;
     let ties = 0;
-    const iterations = 1000;
+    const iterations = 5000; // Increased for better accuracy
 
     for (let i = 0; i < iterations; i++) {
         const shuffledDeck = [...deck].sort(() => Math.random() - 0.5);
@@ -164,8 +324,9 @@ function calculatePokerOdds(player1Cards, player2Cards, communityCards) {
         const player1Hand = evaluateHand([...player1Cards, ...simulatedCommunityCards]);
         const player2Hand = evaluateHand([...player2Cards, ...simulatedCommunityCards]);
 
-        if (player1Hand > player2Hand) player1Wins++;
-        else if (player2Hand > player1Hand) player2Wins++;
+        const result = compareHands(player1Hand, player2Hand);
+        if (result > 0) player1Wins++;
+        else if (result < 0) player2Wins++;
         else ties++;
     }
 
@@ -175,10 +336,14 @@ function calculatePokerOdds(player1Cards, player2Cards, communityCards) {
         tie: (ties / iterations * 100).toFixed(2) + "%"
     };
 
-    // Display results on the website
-    document.getElementById("player1Win").innerText = results.player1;
-    document.getElementById("player2Win").innerText = results.player2;
-    document.getElementById("player1And2Tie").innerText = results.tie;
+    try {
+        // Display results on the website
+        document.getElementById("player1Win").innerText = results.player1;
+        document.getElementById("player2Win").innerText = results.player2;
+        document.getElementById("player1And2Tie").innerText = results.tie;
+    } catch (e) {
+        console.error("Error updating DOM:", e);
+    }
 
     return results;
 }

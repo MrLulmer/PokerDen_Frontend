@@ -71,3 +71,21 @@ td {
     font-weight: bold;
     text-transform: uppercase;
 }
+/* Ensure tables fit on small screens */
+@media screen and (max-width: 768px) {
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto; /* Allow horizontal scrolling */
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 6px; /* Further reduce padding */
+        font-size: 12px; /* Reduce text size */
+    }
+
+    th {
+        font-size: 13.5px;
+    }
+}

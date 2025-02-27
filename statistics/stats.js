@@ -24,7 +24,7 @@ function addRow() {
 
     // Increment session count and update the session number in the new row
     sessionCount++;
-    cell5.innerHTML = `<span class="sessionNum">Session <span id="sessionNumber">${sessionCount}</span></span>`;
+    cell5.innerHTML = `<span class="sessionNum"> <span id="sessionNumber">${sessionCount}</span></span>`;
 }
  
 //Calculates the Total Profit/Loss 
