@@ -30,7 +30,7 @@ html{
     font-size: 14px;
 }
 .navbar a:hover {
-    color: #ff453a;
+    color: #00B050;
 }
 
 /* Titels */
@@ -86,7 +86,7 @@ input {
     background-color: #ffffff;
 }
 input:focus {
-    border-color: #ff453a; 
+    border-color: #00B050; 
     outline: none;
 }
 
@@ -102,7 +102,9 @@ button { /*? Button neads; font-size, padding & margine (hover if needed) */
     display: block;
     border: 1px solid #000000;
 }
-
+button:hover {
+    background: #00B050;
+}
 /* General */
 body {
     max-width: 960px;
@@ -127,11 +129,12 @@ footer {
     text-decoration: underline;
 }
 #terms:hover {
-    color: #ff453a;
+    color: #00B050;
 }
 
 /* Special ID's */
 #email{
+    color: #00B050;
     text-decoration: underline;
 }
 #date {
@@ -142,8 +145,8 @@ footer {
     margin-bottom: 5px;
     border-bottom: 0px;
 }
-#link {
-    color: #413a9b;
+.link {
+    color: #00B050;
     text-decoration: underline;
 }
 

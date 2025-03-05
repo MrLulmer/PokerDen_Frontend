@@ -38,11 +38,11 @@ input[type="number"] {
     margin: 20px auto;
 }
 .addRowBtn:hover {
-    background: #ff453a;
+    background: #00B050;
     color: #FFF;
 }
 .plotBtn:hover {
-    background: #4bc0c0; 
+    background: #ff453a; 
     color: #FFF;
 }
 

@@ -50,10 +50,10 @@ table td {
 }
 /* Pause & Play */
 .playBtn{
-    color: #17b978;
+    color: #00B050;
 }
 .playBtn:hover{
-    background-color: #17b978;
+    background-color: #00B050;
     color: #FFFFFF;
 }
 .pauseBtn {

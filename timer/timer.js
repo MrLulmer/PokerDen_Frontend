@@ -66,14 +66,13 @@ function startTimer() {
         }
     }, 1000); // Updates every second 
 }
-
-// Pause 
-function pauseTimer() {
-    isPaused = true;
-}
 // Play 
 function resumeTimer() {
     isPaused = false;
+}
+// Pause 
+function pauseTimer() {
+    isPaused = true;
 }
 // Reset 
 function resetTimer() {

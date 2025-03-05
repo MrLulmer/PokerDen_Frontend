@@ -58,8 +58,8 @@ const myChart = new Chart(ctx, {
     datasets: [{
       label: 'Total over Time',
       data: chartData,
-      borderColor: 'rgba(75, 192, 192, 1)', // Line color
-      backgroundColor: 'rgba(75, 192, 192, 0.2)', // Color under line
+      borderColor: '#ff453a', // Line color
+      backgroundColor: '#ff443a69', // Color under line
       fill: true,
       tension: 0.2
     }]
@@ -69,7 +69,7 @@ const myChart = new Chart(ctx, {
     scales: {
       x: {
         grid: {
-          color: 'rgba(0, 0, 0, 0.2)', // Color grid line 
+          color: '#333', // Color grid line 
           lineWidth: 1 // Thickness 
         },
         ticks: {
@@ -79,7 +79,7 @@ const myChart = new Chart(ctx, {
       y: {
         beginAtZero: true,
         grid: {
-          color: 'rgba(0, 0, 0, 0.2)', // Color grid line
+          color: '#333', // Color grid line
           lineWidth: 1 // Thickness 
         },
         ticks: {

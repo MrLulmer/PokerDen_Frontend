@@ -39,10 +39,6 @@ h5 {
     font-size: 14px;
     text-transform: uppercase;
 }
-.card-dropdown:focus {
-    border-color: #ff453a;
-    outline: none;
-}
 
 /* Grid layout for Board cards */
 .board-grid {
@@ -82,9 +78,6 @@ button {
     font-size: 18px;
     padding: 12px 24px;
     margin: 20px auto;
-}
-button:hover {
-    background: #ff453a;
 }
 
 /* Result box */

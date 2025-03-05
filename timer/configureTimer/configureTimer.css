@@ -21,10 +21,6 @@ input {
     padding: 12px 24px;
     margin: 20px auto;
 }
-#submitBtn:hover {
-    background: #ff453a;
-    color: #FFF;
-}
 
 /* Form container */ /*? Every thing but the Title */
 form {
