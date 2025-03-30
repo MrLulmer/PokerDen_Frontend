@@ -11,7 +11,6 @@ label {
 input {
     width: calc(100% - 10px);
     margin: 0 auto 15px auto; /* Margin for spacing */
-    border: 1px solid #333; 
     background-color: #f7f7f7; 
 }
 
@@ -36,12 +35,12 @@ table {
     width: 90%;
     margin: 20px auto;
     border-collapse: collapse;
-    border: 2px solid #dee2e6;
+    border: 1px solid #333;
 }
 th, td {
     padding: 16px;
     text-align: center;
-    border: 1px solid #dee2e6;
+    border: 1px solid #333;
 }
 th {
     background-color: #e9ecef;
@@ -55,9 +54,6 @@ tr:nth-child(even) {
 }
 tr:nth-child(odd) {
     background-color: #ffffff;
-}
-tr:hover {
-    background-color: #f1f3f5;
 }
 td {
     color: #333;

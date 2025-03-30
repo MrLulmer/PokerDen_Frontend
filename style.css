@@ -84,9 +84,10 @@ input {
     font-size: 14px;
     box-sizing: border-box;
     background-color: #ffffff;
+    border: 1px solid #333;
 }
 input:focus {
-    border-color: #00B050; 
+    border: 1px solid #00B050;
     outline: none;
 }
 
@@ -100,11 +101,12 @@ button { /*? Button neads; font-size, padding & margine (hover if needed) */
     cursor: pointer;
     letter-spacing: 2px;
     display: block;
-    border: 1px solid #000000;
+    border: 1px solid #333;
 }
 button:hover {
     background: #00B050;
 }
+
 /* General */
 body {
     max-width: 960px;

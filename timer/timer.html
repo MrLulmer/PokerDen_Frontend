@@ -20,7 +20,6 @@
       })(window, document, 'https://static.hj.contentsquare.net/c/csq-', '.js', 5295548);
   </script>
 </head>
-
 <body>
   <!-- Navbar -->
   <div class="navbar">
@@ -31,73 +30,71 @@
   </div>
 
   <!-- Content -->
-  <div class="content" style="text-align: center;">
+  <div class="content">
 
-    <h1 class="titel">Blinds Timer </h1>
+      <h1 class="titel">Blinds Timer</h1>
+      <!-- Timer related code -->
+      <div class="timer" id="timer">00:00</div>
+      <!-- Message -->
+      <div id="timeup_message"></div>
 
-    <!-- Timer related code -->
-    <div class="timer" id="timer">00:00</div>
-    <!-- Message -->
-    <div id="timeup_message"></div>
-    <!-- Values -->
-    <div class="values">
-      <table class="invisibleTable1">
-        <tr>
-          <td></td>
-          <!-- Small Blind & Small Blind Value -->
-          <td class="blindValue">
-            <span id="smallBlindValue"></span>
-          </td>
-          <td class="blindValue">
-            <span id="bigBlindValue"></span>
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <!-- Small & Big Blind Text -->
-          <td class="blindText">
-            <span id="smallBlind">Small blind </span>
-          </td>
-          <td class="blindText">
-            <span id="bigBlind">Big blind </span>
-          </td>
-          <td></td>
-        </tr>
-      </table>
-    </div>
+      <!-- Values -->
+      <div class="values">
+          <table class="invisibleTable1">
+              <tr>
+                  <!-- Small Blind & Small Blind Value -->
+                  <td class="blindValue">
+                      <span id="smallBlindValue"></span>
+                  </td>
+                  <td class="blindValue">
+                      <span id="bigBlindValue"></span>
+                  </td>
+              </tr>
+              <tr>
+                  <!-- Small & Big Blind Text -->
+                  <td class="blindText">
+                      <span id="smallBlind">Small blind </span>
+                  </td>
+                  <td class="blindText">
+                      <span id="bigBlind">Big blind </span>
+                  </td>
+              </tr>
+          </table>
+      </div>
 
-    <!-- Pause & Play Button -->
-    <table class="invisibleTable2">
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>
-          <button class="playBtn actionButton" onclick="resumeTimer()">
-            <span class="material-symbols-outlined pause-icon">play_arrow</span>
-          </button>
-        </td>
-        <td>
-          <button class="pauseBtn actionButton" onclick="pauseTimer()">
-            <span class="material-symbols-outlined play-icon">pause</span>
-          </button>
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><button class="startBtn actionButton" onclick="startTimer()">Start </button> </td>
-        <td><button class="resetBtn actionButton" onclick="resetTimer()">Back </button></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
+      <!-- Progress Bar -->
+      <div class="progress-bar">
+        <div class="progress" id="progressBar"></div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="buttons">
+          <table class="invisibleTable2">
+              <tr>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                  <button id="startBtn">
+                    <span class="material-symbols-outlined pause-icon">play_arrow</span>
+                  </button>
+                </td>
+                <td>
+                  <button id="pauseBtn">
+                    <span class="material-symbols-outlined play-icon">pause</span>
+                  </button>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+              </tr>
+          </table>
+      </div>
+      <button id="backBtn">Back</button>
+      
+
   </div>
 
   <!-- Footer -->

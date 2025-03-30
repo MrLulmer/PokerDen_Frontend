@@ -31,44 +31,103 @@ table td {
     height: 25px;
     text-align: center; 
 }
+#backBtn {
+    display: block;
+    width: 150px; /* Or any desired width */
+    margin: 0 auto;
+}
 
 /* Buttons Section */ /*? Editable button */
-.actionButton {
+button {
     font-size: 15px;
     padding: 10px;
     width: 120px;
     margin: 20px auto;
 }
-.pausePlay, .startReset {
+.buttons {
     display: flex;
     justify-content: center;
 }
 /* Start & Reset */
-.startBtn:hover, .resetBtn:hover {
+#resetBtn, #backBtn {
     background-color: #FFFFFF;
-    color: #000000;
+    color: #333;
+}
+#resetBtn:hover, #backBtn:hover {
+    background-color: #333;
+    color: #FFFFFF;
 }
 /* Pause & Play */
-.playBtn{
+#startBtn{
     color: #00B050;
 }
-.playBtn:hover{
+#startBtn:hover{
     background-color: #00B050;
     color: #FFFFFF;
 }
-.pauseBtn {
+#pauseBtn {
     color: #ff304f;
 }
-.pauseBtn:hover{
+#pauseBtn:hover{
     background-color: #ff304f;
     color: #FFFFFF;
 }
 
-/* Time Up Message */
-#timeup_message {
-    font-size: 24px;
-    color: #000000;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin: 0;
+/* progress bar */
+.progress-bar {
+    width: 70%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 0px;
+    margin: 2rem auto; /* Changed to center horizontally */
+    overflow: hidden;
 }
+
+.progress {
+    height: 100%;
+    background-color: #4CAF50;
+    width: 0%;
+    transition: width 1s linear;
+}
+
+#timeup_message {
+    /* Position fixed in the middle of the screen */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* Size and appearance */
+    padding: 20px 40px;
+    border-radius: 1px;
+    
+    /* Z-index ensures it's above all other elements */
+    z-index: 9999;
+    
+    /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    /* Text styling */
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    
+    /* Initially hidden */
+    display: none;
+    
+    /* Animation for appearing and disappearing */
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Fade out animation */
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }

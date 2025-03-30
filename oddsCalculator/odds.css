@@ -39,7 +39,10 @@ h5 {
     font-size: 14px;
     text-transform: uppercase;
 }
-
+.card-dropdown:focus {
+    border: 1px solid #00B050;
+    outline: none;
+}
 /* Grid layout for Board cards */
 .board-grid {
     display: grid;
