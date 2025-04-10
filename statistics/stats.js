@@ -96,6 +96,7 @@ const myChart = new Chart(ctx, {
     }
   }
 });
+
 // Plots data nd adds to the chart 
 function plotData() {
   const buyIns = document.querySelectorAll('.buyIn');
